@@ -1,1 +1,2 @@
-# Recharge-Website-Development-Series
+# Recharge-An amazing project
+

@@ -1,6 +1,7 @@
 <?php
+// include database
 include 'db.php';
-
+// checking the post request is set or not  
   if(isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['mobile']) AND isset($_POST['password'])){
 $name=$_POST['name'];
 $email=$_POST['email'];
