@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+// i think ur use codeigniter framework for ceate a best website for recharge multiple network this is easy and atractive framework
 
   if(isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['mobile']) AND isset($_POST['password'])){
 $name=$_POST['name'];
