@@ -40,23 +40,23 @@ $errors[]='mobile Number is not valid!';
 }
 
 
-$emch=mysql_query("SELECT * FROM users WHERE email='$email'");
+$emch = $mysqli->query("SELECT * FROM users WHERE email='$email'");
 
-if(mysql_num_rows($emch)>0){
-$errors[]='Email already registered with another account!';
-}
+  if(mysqli_num_rows($emch)>0){
+  $errors[]='Email already registered with another account!';
+  }
 
 
-$emcha=mysql_query("SELECT * FROM users WHERE number='$mobile'");
+$emcha= $mysql->query("SELECT * FROM users WHERE number='$mobile'");
 
-if(mysql_num_rows($emcha)>0){
-$errors[]='Mobile number already registered with another account!';
-}
+    if(mysqli_num_rows($emcha)>0){
+    $errors[]='Mobile number already registered with another account!';
+    }
 
 
 if(empty($errors)){
 
-  $doreg=mysql_query("INSERT INTO users (email,password,name,number,status,balance) VALUES ('$email','$password1','$name','$mobile','1','0')");
+    $doreg= $mysql->query("INSERT INTO users (email,password,name,number,status,balance) VALUES ('$email','$password1','$name','$mobile','1','0')");
 
   if($doreg){
  

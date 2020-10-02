@@ -1,12 +1,17 @@
 <?php
 
+$dbcon = mysqli_connect("HOST", "USER", "PASSWORD", "DATABASE");
+$dbselect = $dbcon->select_db('DATABASE');
 
-$dbcon=mysql_connect('localhost','root','');
-$dbselect=mysql_select_db('recharge',$dbcon);
-
-if(!$dbcon OR !$dbselect){
- echo 'Database connection failed!';
-exit;
+ 
+if (!$dbcon) {
+    echo "Error: Failed to connect to the MySQL database." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
 }
-
-?>
+ 
+echo "Success: Success when connecting to the MySQL database." . PHP_EOL;
+ 
+mysqli_close($dbcon);
+?> 
