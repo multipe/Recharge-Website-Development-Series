@@ -2,10 +2,10 @@
 include 'db.php';
 
   if(isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['mobile']) AND isset($_POST['password'])){
-$name=$_POST['name'];
-$email=$_POST['email'];
-$mobile=$_POST['mobile'];  
-$password=$_POST['password'];
+$name=mysqli_real_escape_string($db, $_POST['name']);
+$email=mysqli_real_escape_string($db, $_POST['email']);
+$mobile=mysqli_real_escape_string($db, $_POST['mobile']);  
+$password=mysqli_real_escape_string($db, $_POST['password']);
 $password1=md5($password);
 
 $errors=array();
